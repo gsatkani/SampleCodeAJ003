@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Bean definition -->
+	<bean id="employee2" class="com.model.Employee">
+		<constructor-arg type="int" value="111" index="0"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="Ajay" index="1"></constructor-arg>
+		<constructor-arg type="java.util.ArrayList" index="2">
+			<list>
+				<value>101</value>
+				<value>104</value>
+			</list>
+		</constructor-arg>
+
+	</bean>
+	
+	<bean id="employee3" class="com.model.Employee">
+	</bean>
+
+
+
+
+	<bean id="employee1" class="com.model.Employee" scope="prototype">
+		<property name="id">
+			<value>101 </value>
+		</property>
+		<property name="name">
+			<value>Sathish</value>
+		</property>
+		<property name="list">
+			<list>
+				<value>101</value>
+				<value>102</value>
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="1" value="ABB"></entry>
+				<entry key="2" value="ABC"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+
+</beans>
+        
