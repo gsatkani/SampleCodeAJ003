@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Bean definition -->
+	<bean id="college" class="com.cognizant.autowire.College">
+		<property name="collgename">
+			<value>Vellamal</value>
+		</property>
+		<property name="collegecode">
+			<value>1120</value>
+		</property>
+	</bean>
+
+	<bean id="eee" class="com.cognizant.autowire.Department"
+		autowire="byName">
+		<property name="deptname">
+			<value>EEE</value>
+		</property>
+		<property name="noOfStudents">
+			<value>40</value>
+		</property>
+	</bean>
+
+	<bean id="it" class="com.cognizant.autowire.Department"
+		autowire="byType">
+		<property name="deptname">
+			<value>IT</value>
+		</property>
+		<property name="noOfStudents">
+			<value>30</value>
+		</property>
+	</bean>
+
+
+	<bean id="cse" class="com.cognizant.autowire.Department">
+		<property name="deptname">
+			<value>CSE</value>
+		</property>
+		<property name="noOfStudents">
+			<value>60</value>
+		</property>
+		<property name="college">
+			<bean class="com.cognizant.autowire.College">
+				<property name="collgename">
+					<value>Vellamal</value>
+				</property>
+				<property name="collegecode">
+					<value>1120</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+
+	<bean id="ece" class="com.cognizant.autowire.Department">
+		<property name="deptname">
+			<value>ECE</value>
+		</property>
+		<property name="noOfStudents">
+			<value>120</value>
+		</property>
+		<property name="college">
+			<bean class="com.cognizant.autowire.College">
+				<property name="collgename">
+					<value>Vellamal</value>
+				</property>
+				<property name="collegecode">
+					<value>1120</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
+        
