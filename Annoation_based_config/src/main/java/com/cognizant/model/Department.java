@@ -1,4 +1,4 @@
-package com.cognizant.autowire;
+package com.cognizant.model;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,15 +10,14 @@ public class Department {
 	String deptname;
 	int noOfStudents;
 	// Has A  RelationShip -> College Has-A Department
-	
-	@Autowired
-	@Qualifier("anna")
+	@Autowired  // default mode byType
+	@Qualifier("college2")  // mode byName
 	College college;
 
 	public String getDeptname() {
 		return deptname;
 	}
-    @Required
+    
 	public void setDeptname(String deptname) {
 		this.deptname = deptname;
 	}
