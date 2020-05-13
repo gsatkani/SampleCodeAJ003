@@ -16,7 +16,8 @@ public class App {
 	private static ApplicationContext context;
 
 	public static void main(String[] args) {
-		context = new AnnotationConfigApplicationContext(AppConfig.class);
+		context = 
+		new AnnotationConfigApplicationContext(AppConfig.class);
 
 		College college = (College) context.getBean("college");
 		Department eee = context.getBean("eee", Department.class);
